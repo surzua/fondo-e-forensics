@@ -259,6 +259,8 @@ def build_interactive_product_5(
     current_balance: float = 89_610_000.0,
     target_balance: float = 100_000_000.0,
     salary: float = 1_800_000.0,
+    annual_expected_return: float = 0.030,
+    annual_volatility: float = 0.040,
 ) -> go.Figure:
     """Construye el Fan Chart interactivo de Monte Carlo del Producto 5."""
     register_plotly_theme()
@@ -269,6 +271,8 @@ def build_interactive_product_5(
         monthly_contribution_clp=salary * 0.10,
         n_sims=10000,
         max_months=120,
+        annual_expected_return=annual_expected_return,
+        annual_volatility=annual_volatility,
     )
 
     meses = mc_sim["meses_eje"]
