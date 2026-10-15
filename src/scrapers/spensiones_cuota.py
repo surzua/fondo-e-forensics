@@ -197,7 +197,18 @@ class SpensionesCuotaScraper(BaseScraper):
         end_year: int = 2026,
         force_refresh: bool = False,
     ) -> Tuple[pl.DataFrame, str]:
-        """Orquestador completo: descarga en vivo, parseo y ponderación del sistema."""
+        """Orquestador completo: descarga en vivo, parseo y ponderación del sistema.
+
+        Utiliza caché Parquet local para acelerar la lectura a milisegundos si ya fue procesado.
+        """
+        fondo = fondo.upper()
+        parquet_cache = self.cache_dir / f"parsed_{fondo}_{start_year}_{end_year}.parquet"
+
+        if parquet_cache.exists() and not force_refresh:
+            logger.info("⚡ Cargando dataset parseado de Fondo %s desde caché Parquet: %s", fondo, parquet_cache.name)
+            df_cached = pl.read_parquet(parquet_cache)
+            return df_cached, "LOCAL_CACHE"
+
         raw_path, origin = self.download_fondo_raw(
             fondo=fondo,
             start_year=start_year,
@@ -206,4 +217,8 @@ class SpensionesCuotaScraper(BaseScraper):
         )
         parsed_df = self.parse_csv(raw_path, fondo=fondo)
         weighted_df = self.compute_system_weighted(parsed_df)
+
+        # Guardar en caché Parquet para lecturas subsecuentes instantáneas
+        weighted_df.write_parquet(parquet_cache)
+        logger.info("Caché Parquet generado: %s (%d filas)", parquet_cache.name, len(weighted_df))
         return weighted_df, origin

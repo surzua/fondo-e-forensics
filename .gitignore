@@ -46,6 +46,7 @@ data/raw/*.zip
 data/raw/*.tar.gz
 data/raw/*.tmp
 data/raw/spensiones_carteras/*.zip
+data/raw/**/*.parquet
 data/interim/*.parquet
 data/processed/*.parquet
 
