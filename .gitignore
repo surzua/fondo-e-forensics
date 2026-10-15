@@ -46,6 +46,8 @@ data/raw/*.zip
 data/raw/*.tar.gz
 data/raw/*.tmp
 data/raw/spensiones_carteras/*.zip
+data/interim/*.parquet
+data/processed/*.parquet
 
 # Mantener las carpetas en git con .gitkeep
 !data/raw/.gitkeep
