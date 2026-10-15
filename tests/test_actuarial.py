@@ -94,3 +94,15 @@ def test_evaluate_profile_impact(engine):
     assert impact.recorte_pension_pct > 9.5
     assert impact.monte_carlo_meses_recuperacion_p50 is not None
     assert impact.monte_carlo_meses_recuperacion_p50 > 0
+
+
+@pytest.mark.parametrize("sex", ["hombre", "mujer"])
+def test_cnu_consistency_ages_55_to_70(engine, sex):
+    """Verifica que el CNU sea decreciente y positivo para todas las edades de 55 a 70 años."""
+    previous_cnu = float("inf")
+    for age in range(55, 71):
+        cnu = engine.calculate_cnu(age=age, sex=sex, technical_rate=0.032)
+        assert 8.0 <= cnu <= 22.0, f"CNU fuera de rango plausible para {sex} edad {age}: {cnu}"
+        assert cnu < previous_cnu, f"CNU no es monótonamente decreciente en edad {age} para {sex}"
+        previous_cnu = cnu
+

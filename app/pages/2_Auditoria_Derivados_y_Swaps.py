@@ -38,7 +38,7 @@ init_session_state()
 render_affiliate_sidebar()
 
 # Encabezado
-st.markdown(
+st.html(
     f"""
     <div style="margin-bottom: 20px;">
         {render_badge("Módulo 2: Auditoría Forense", "red")}
@@ -50,8 +50,7 @@ st.markdown(
             Descomposición cuantitativa de pérdidas: Swaps de tasas en EE.UU., duración sintética de 17 años y sobrecobertura cambiaria corta.
         </p>
     </div>
-    """,
-    unsafe_allow_html=True,
+    """
 )
 
 # Métricas Principales de Atribución
@@ -114,12 +113,12 @@ wf_col1, wf_col2 = st.columns([1.3, 1.0])
 
 with wf_col1:
     st.markdown(
-        f"""
+        rf"""
         | Factor / Instrumento Financiero | Contribución (pp) | % del Daño Nominal | Naturaleza del Riesgo |
         | :--- | :---: | :---: | :--- |
         | **Swaps Tasas Extranjeras (USD)** | `{attr['swaps_tasas_usd_pp']:+.2f} pp` | **60,8%** | Posición pagadora de tasa fija ante salto del US10Y. |
         | **Swaps Tasas Locales (CLP/UF)** | `{attr['swaps_tasas_locales_pp']:+.2f} pp` | **18,9%** | Contratos de tasas locales en Cámara y BCP. |
-        | **Forwards Cambiarios USD (Short)** | `{attr['forwards_fx_pp']:+.2f} pp` | **10,8%** | Pérdida al subir el dólar de $911 a $970 con posición corta al 150%. |
+        | **Forwards Cambiarios USD (Short)** | `{attr['forwards_fx_pp']:+.2f} pp` | **10,8%** | Pérdida al subir el dólar de \$911 a \$970 con posición corta al 150%. |
         | **Bonos Físicos (RF Local/Ext)** | `{attr['bonos_fisicos_pp']:+.2f} pp` | **9,5%** | Deuda soberana chilena tradicional de bajo riesgo. |
         | **Subtotal Retorno Nominal** | `{attr['retorno_nominal_total_pct']:.2f}%` | **100,0%** | Retorno nominal antes del ajuste de inflación. |
         | **Arrastre de Inflación (Variación UF)** | `{attr['arrastre_inflacion_uf_pp']:+.2f} pp` | — | Pérdida de poder adquisitivo por inflación del período (+3,34%). |
@@ -157,13 +156,11 @@ st.plotly_chart(fig_thermometer, use_container_width=True)
 dur_col1, dur_col2 = st.columns(2)
 
 with dur_col1:
+    st.markdown("#### 📐 Sensibilidad Matemática de Duración y Convexidad")
+    st.markdown("La variación de precio ante cambios en la tasa de interés se modela mediante la expansión de Taylor:")
+    st.latex(r"\frac{\Delta P}{P} \approx -D_{\text{total}} \cdot \Delta y + \frac{1}{2} \cdot C \cdot (\Delta y)^2")
     st.markdown(
         f"""
-        #### 📐 Sensibilidad Matemática de Duración y Convexidad
-        La variación de precio ante cambios en la tasa de interés se modela mediante la expansión de Taylor:
-        
-        $$\\frac{{\\Delta P}}{{P}} \\approx -D_{{\\text{{total}}}} \\cdot \\Delta y + \\frac{{1}}{{2}} \\cdot C \\cdot (\\Delta y)^2$$
-        
         * **Duración Física (Bonos Locales UF):** `10,2 años`
         * **Duración Sintética (Swaps USD):** `6,8 años`
         * **Duración Total Efectiva:** **`17,0 años`**
@@ -199,7 +196,7 @@ fx_col1, fx_col2 = st.columns([1.2, 1.0])
 
 with fx_col1:
     st.markdown(
-        """
+        r"""
         En condiciones normales, la inversión en el extranjero cuenta con un **amortiguador cambiario natural**:
         cuando los mercados financieros internacionales caen, el dólar tiende a apreciarse en Chile (efecto "vuelo a la calidad").
         Al subir el tipo de cambio USD/CLP, la ganancia por conversión de moneda compensa parte de la caída en el precio del activo externo.
@@ -207,12 +204,12 @@ with fx_col1:
         **¿Qué hicieron las AFP?**
         1. Tomaron posiciones cortas en derivados de tipo de cambio (*Forwards USD/CLP*) con un ratio de cobertura del **150% del valor de los activos externos**.
         2. Al vender futuros de dólares por un monto 1,5 veces superior a sus tenencias reales, **anularon por completo el amortiguador cambiario** y asumieron una posición neta apostando a la apreciación del peso chileno.
-        3. Cuando el dólar en Chile escaló de **$911 a $970 CLP** (+6,5%), las posiciones en forwards sufrieron liquidaciones forzosas, **restando -0,80 pp adicionales** al retorno del fondo.
+        3. Cuando el dólar en Chile escaló de **\$911 a \$970 CLP** (+6,5%), las posiciones en forwards sufrieron liquidaciones forzosas, **restando -0,80 pp adicionales** al retorno del fondo.
         """
     )
 
 with fx_col2:
-    st.markdown(
+    st.html(
         """
         <div class="kpi-card">
             <div class="kpi-title">Mecánica del Desastre Cambiario</div>
@@ -224,8 +221,7 @@ with fx_col2:
                 <b>Resultado Neto:</b> Daño directo de <b>-0,80 pp</b> en el Fondo E.
             </div>
         </div>
-        """,
-        unsafe_allow_html=True,
+        """
     )
 
 st.markdown("---")

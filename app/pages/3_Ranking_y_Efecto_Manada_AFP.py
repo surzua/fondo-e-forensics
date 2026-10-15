@@ -40,7 +40,7 @@ init_session_state()
 render_affiliate_sidebar()
 
 # Encabezado
-st.markdown(
+st.html(
     f"""
     <div style="margin-bottom: 20px;">
         {render_badge("Módulo 3: Riesgo Sistémico", "gold")}
@@ -52,8 +52,7 @@ st.markdown(
             Evidencia empírica de replicación masiva: correlación cruzada diaria superior a 0,98 e idéntica exposición al colapso.
         </p>
     </div>
-    """,
-    unsafe_allow_html=True,
+    """
 )
 
 # Métricas Ejecutivas del Ranking
@@ -102,7 +101,7 @@ st.markdown("---")
 # ==============================================================================
 st.markdown("### 📉 1. Riesgo Extremo: The Underwater & VaR Shock Chart")
 st.markdown(
-    "<small style='color: #8B949E;'>Evolución de un saldo base real de $100 MM (Fondo E vs Fondo A) y profundidad del drawdown con rupturas de la banda de VaR 99%:</small>",
+    "<small style='color: #8B949E;'>Evolución de un saldo base real de \\$100 MM (Fondo E vs Fondo A) y profundidad del drawdown con rupturas de la banda de VaR 99%:</small>",
     unsafe_allow_html=True,
 )
 
@@ -116,7 +115,7 @@ with uw_col1:
         """
         #### 📌 Hallazgos del Comportamiento Extremo:
         * **Inversión de Roles:** Durante 2026, el **Fondo E (supuestamente conservador) cayó 7 veces más que el Fondo A (renta variable de alto riesgo)**.
-        * **Pérdida de Capital Real:** Un afiliado que inició 2026 con $100.000.000 CLP deflactados por UF termina a septiembre en **$89.610.000 CLP**, perdiendo más de $10,3 millones en poder adquisitivo. En contraste, el Fondo A superó los $108,6 millones reales.
+        * **Pérdida de Capital Real:** Un afiliado que inició 2026 con \\$100.000.000 CLP deflactados por UF termina a septiembre en **\\$89.610.000 CLP**, perdiendo más de \\$10,3 millones en poder adquisitivo. En contraste, el Fondo A superó los \\$108,6 millones reales.
         * **Ruptura de VaR al 99%:** El drawdown perforó en múltiples ocasiones el límite de Value at Risk paramétrico e histórico, confirmando colas pesadas (*fat tails*) derivadas del apalancamiento sintético.
         """
     )

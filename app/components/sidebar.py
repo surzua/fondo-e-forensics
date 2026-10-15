@@ -41,7 +41,7 @@ def render_affiliate_sidebar() -> None:
             help="Saldo total acumulado en tu cuenta obligatoria en el Fondo E.",
         )
         st.session_state["saldo_clp"] = saldo_clp
-        st.sidebar.caption(f"Equivalente a: **{saldo_clp / uf_val:,.1f} UF** (UF = ${uf_val:,.2f})")
+        st.sidebar.caption(f"Equivalente a: **{saldo_clp / uf_val:,.1f} UF** (UF = \\${uf_val:,.2f})")
     else:
         saldo_uf = st.sidebar.number_input(
             "Saldo Actual en Fondo E (UF):",
@@ -54,7 +54,7 @@ def render_affiliate_sidebar() -> None:
         )
         saldo_clp = saldo_uf * uf_val
         st.session_state["saldo_clp"] = saldo_clp
-        st.sidebar.caption(f"Equivalente a: **${saldo_clp:,.0f} CLP**")
+        st.sidebar.caption(f"Equivalente a: **\\${saldo_clp:,.0f} CLP**")
 
     # Selector de AFP
     afp_list = ["SISTEMA"] + AFPS
@@ -113,7 +113,7 @@ def render_affiliate_sidebar() -> None:
         help="Base para calcular el 10% de cotización legal obligatoria mensual.",
     )
     st.session_state["sueldo_imponible"] = sueldo
-    st.sidebar.caption(f"Cotización obligatoria (10%): **${sueldo * 0.10:,.0f} CLP/mes**")
+    st.sidebar.caption(f"Cotización obligatoria (10%): **\\${sueldo * 0.10:,.0f} CLP/mes**")
 
     # Tasa Técnica de Descuento
     tasa_tec = st.sidebar.slider(

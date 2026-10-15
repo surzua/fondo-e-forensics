@@ -25,7 +25,7 @@ init_session_state()
 render_affiliate_sidebar()
 
 # Encabezado Principal
-st.markdown(
+st.html(
     """
     <div style="margin-bottom: 24px;">
         <span class="badge-forensic badge-red">AUDITORÍA FORENSE CUANTITATIVA</span>
@@ -37,8 +37,7 @@ st.markdown(
             Análisis Forense del Colapso Patrimonial del Fondo E y la Crisis de los Swaps de Tasas en las AFP
         </p>
     </div>
-    """,
-    unsafe_allow_html=True,
+    """
 )
 
 # 4 KPIs Superiores de Nivel Sistema
@@ -88,7 +87,7 @@ col_text, col_alert = st.columns([1.5, 1.0])
 with col_text:
     st.markdown("### 📋 Síntesis de la Investigación")
     st.markdown(
-        """
+        r"""
         El **Fondo E** fue diseñado por ley como el refugio de máxima seguridad del sistema previsional chileno,
         destinado a preservar el capital de los trabajadores a meses de pensionarse. Sin embargo, en 2026 sufrió un
         **desplome histórico de -10,39% en términos reales**, destruyendo los ahorros de miles de pensionados y superando
@@ -99,7 +98,7 @@ with col_text:
         
         * **Crecimiento desmedido en Swaps:** Entre agosto de 2023 y diciembre de 2025, el valor nocional en derivados de tasas de interés externas se disparó **40 veces**, pasando de **US$ 5.300 millones a US$ 206.900 millones**.
         * **Sensibilidad de Tasa Extrema:** La duración combinada alcanzó **17,0 años**. Cuando el Bono del Tesoro de EE.UU. a 10 años (US10Y) subió de **4,18% a 5,29%**, la cartera sufrió una pérdida masiva.
-        * **Trampa de Sobrecobertura Cambiaria:** Al vender dólares a futuro al **150%**, las AFP anularon el amortiguador cambiario natural del dólar cuando subió de $911 a $970 CLP, multiplicando el daño.
+        * **Trampa de Sobrecobertura Cambiaria:** Al vender dólares a futuro al **150%**, las AFP anularon el amortiguador cambiario natural del dólar cuando subió de \$911 a \$970 CLP, multiplicando el daño.
         """
     )
 
@@ -126,7 +125,7 @@ st.markdown("<small style='color:#8B949E;'>Selecciona un módulo en el menú lat
 nav1, nav2, nav3 = st.columns(3)
 
 with nav1:
-    st.markdown(
+    st.html(
         """
         <div class="kpi-card">
             <div style="font-size: 2rem; margin-bottom: 8px;">🧮</div>
@@ -140,12 +139,11 @@ with nav1:
                 Ir a la Calculadora →
             </a>
         </div>
-        """,
-        unsafe_allow_html=True,
+        """
     )
 
 with nav2:
-    st.markdown(
+    st.html(
         """
         <div class="kpi-card">
             <div style="font-size: 2rem; margin-bottom: 8px;">🔍</div>
@@ -159,12 +157,11 @@ with nav2:
                 Ver Auditoría Forense →
             </a>
         </div>
-        """,
-        unsafe_allow_html=True,
+        """
     )
 
 with nav3:
-    st.markdown(
+    st.html(
         """
         <div class="kpi-card">
             <div style="font-size: 2rem; margin-bottom: 8px;">📊</div>
@@ -178,17 +175,15 @@ with nav3:
                 Ver Ranking de AFPs →
             </a>
         </div>
-        """,
-        unsafe_allow_html=True,
+        """
     )
 
 st.markdown("---")
-st.markdown(
+st.html(
     """
     <div style="font-size: 0.8rem; color: #6E7681; text-align: center; margin-top: 30px;">
         <b>Fuentes de Datos Certificadas:</b> Superintendencia de Pensiones de Chile (Carteras y Valores Cuota), Banco Central de Chile (Informes de Estabilidad Financiera), Federal Reserve Bank of St. Louis (FRED), Servicio de Impuestos Internos (UF diaria).<br>
         Investigación Cuantitativa y Forense Previsional — Todos los derechos reservados © 2026.
     </div>
-    """,
-    unsafe_allow_html=True,
+    """
 )
