@@ -92,3 +92,54 @@ class MonthlyCheckpointSchema(pa.DataFrameModel):
     class Config:
         strict = False
         coerce = True
+
+
+class AfpDerivativesPanelSchema(pa.DataFrameModel):
+    """Esquema de validación para la matriz comparativa de las 7 AFP."""
+    afp: pl.String = pa.Field()
+    ret_real_2026_pct: pl.Float64 = pa.Field()
+    danio_swaps_pp: pl.Float64 = pa.Field()
+    ratio_sobrecobertura_usd: pl.Float64 = pa.Field(ge=0.0)
+    perfil_agresividad: pl.String = pa.Field()
+
+    class Config:
+        strict = False
+        coerce = True
+
+
+# ==============================================================================
+# 3. Modelos Pydantic para el Motor Actuarial
+# ==============================================================================
+
+class ActuarialProfile(BaseModel):
+    """Parámetros de entrada para el cálculo actuarial y simulación de Monte Carlo."""
+    saldo_actual_clp: float = Field(gt=0, description="Saldo actual en Fondo E ($ CLP)")
+    afp: str = Field(default="SISTEMA", description="AFP del afiliado")
+    edad_actual: int = Field(ge=40, le=80, description="Edad cronológica actual")
+    sexo: str = Field(pattern=r"^(H|M|hombre|mujer)$", description="Sexo biológico para tablas de mortalidad")
+    edad_jubilacion: int = Field(ge=50, le=80, description="Edad legal o planificada de retiro")
+    sueldo_imponible: float = Field(default=0.0, ge=0.0, description="Sueldo imponible mensual para cotizaciones")
+    tasa_tecnica: float = Field(default=0.032, gt=0.0, le=0.10, description="Tasa técnica de descuento anual")
+
+    @field_validator("sexo")
+    @classmethod
+    def normalize_sexo(cls, v: str) -> str:
+        v = v.strip().lower()
+        return "hombre" if v in ["h", "hombre"] else "mujer"
+
+
+class ActuarialImpactResult(BaseModel):
+    """Resultado del impacto patrimonial y recorte vitalicio de pensión."""
+    saldo_inicial_estimado: float
+    saldo_post_shock: float
+    perdida_patrimonial_clp: float
+    perdida_swaps_clp: float
+    cnu: float
+    pension_pre_shock_mensual: float
+    pension_post_shock_mensual: float
+    recorte_pension_mensual: float
+    recorte_pension_pct: float
+    monte_carlo_meses_recuperacion_p50: Optional[float]
+    monte_carlo_meses_recuperacion_p10: Optional[float]
+    monte_carlo_meses_recuperacion_p90: Optional[float]
+

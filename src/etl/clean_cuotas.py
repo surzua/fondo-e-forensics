@@ -24,9 +24,9 @@ def clean_and_deflate_cuotas(
 
     Calcula retornos nominales, reales y drawdown histórico.
     """
-    # 1. Asegurar tipos de fecha y ordenar
-    cuotas_sorted = df_cuotas.sort(["fondo", "afp", "fecha"])
-    macro_sorted = df_macro.select(["fecha", "uf", "dolar_observado"]).sort("fecha")
+    # 1. Asegurar tipos de fecha, deduplicar y ordenar
+    cuotas_sorted = df_cuotas.unique(subset=["fecha", "fondo", "afp"]).sort(["fondo", "afp", "fecha"])
+    macro_sorted = df_macro.unique(subset=["fecha"]).select(["fecha", "uf", "dolar_observado"]).sort("fecha")
 
     # 2. Join con macro por fecha
     merged = cuotas_sorted.join(macro_sorted, on="fecha", how="inner")
