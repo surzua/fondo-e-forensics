@@ -148,7 +148,7 @@ EDITORIAL_CSS = """
 
 def apply_editorial_theme() -> None:
     """Inyecta la hoja de estilos CSS editorial en la página actual."""
-    st.markdown(EDITORIAL_CSS, unsafe_allow_html=True)
+    st.html(EDITORIAL_CSS)
 
 
 def render_kpi_card(
@@ -160,17 +160,16 @@ def render_kpi_card(
 ) -> None:
     """Renderiza una tarjeta KPI con diseño financiero de alta fidelidad."""
     delta_class = f"delta-{delta_type}"
-    html = f"""
-    <div class="kpi-card">
-        <div class="kpi-title">{title}</div>
-        <div class="kpi-value">{value}</div>
-        <div class="kpi-delta {delta_class}">
-            <span>{delta}</span>
-        </div>
-        {f'<div class="kpi-subtitle">{subtitle}</div>' if subtitle else ''}
-    </div>
-    """
-    st.markdown(html, unsafe_allow_html=True)
+    sub_html = f'<div class="kpi-subtitle">{subtitle}</div>' if subtitle else ""
+    html = (
+        f'<div class="kpi-card">'
+        f'<div class="kpi-title">{title}</div>'
+        f'<div class="kpi-value">{value}</div>'
+        f'<div class="kpi-delta {delta_class}"><span>{delta}</span></div>'
+        f'{sub_html}'
+        f'</div>'
+    )
+    st.html(html)
 
 
 def render_badge(text: str, color: str = "red") -> str:
@@ -179,10 +178,8 @@ def render_badge(text: str, color: str = "red") -> str:
 
 
 def render_callout(text: str, border_color: str = "#D90429") -> None:
-    """Renderiza un bloque explicativo con borde izquierdo de acento."""
-    html = f"""
-    <div class="callout-box" style="border-left-color: {border_color};">
-        {text}
-    </div>
-    """
-    st.markdown(html, unsafe_allow_html=True)
+    """Renderiza un bloque explicativo con borde izquierdo de acento usando HTML nativo."""
+    clean_lines = [line.strip() for line in text.strip().splitlines()]
+    clean_text = "".join(clean_lines)
+    html = f'<div class="callout-box" style="border-left-color: {border_color};">{clean_text}</div>'
+    st.html(html)

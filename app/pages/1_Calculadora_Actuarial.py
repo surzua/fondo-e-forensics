@@ -39,7 +39,7 @@ render_affiliate_sidebar()
 profile = get_actuarial_profile()
 
 # Encabezado
-st.markdown(
+st.html(
     f"""
     <div style="margin-bottom: 20px;">
         {render_badge("Módulo 1: Gancho Ciudadano", "cyan")}
@@ -51,8 +51,7 @@ st.markdown(
             Cuantificación individualizada del recorte vitalicio de pensión y meses de postergación del retiro.
         </p>
     </div>
-    """,
-    unsafe_allow_html=True,
+    """
 )
 
 # Inicializar motor actuarial
@@ -237,9 +236,9 @@ with tab_col1:
         | **Capital Necesario Unitario (CNU)** | `{impact.cnu:.4f} años` | Anualidad anticipada mensual ajustada por Woolhouse y sobrevivencia. |
         | **Tasa Técnica de Descuento** | `{profile.tasa_tecnica * 100:.2f}% real anual` | Tasa oficial vigente para retiro programado y renta vitalicia. |
         | **Edad de Jubilación Evaluada** | `{profile.edad_jubilacion} años` | Sexo: {profile.sexo.capitalize()} (Edad legal: 65H / 60M). |
-        | **Pensión Estimada Pre-Shock** | `${impact.pension_pre_shock_mensual:,.0f} CLP/mes` | Pensión vitalicia autofinanciada antes del desplome 2026. |
-        | **Pensión Actual Post-Shock** | `${impact.pension_post_shock_mensual:,.0f} CLP/mes` | Pensión vitalicia calculada con el saldo auditado actual. |
-        | **Recorte Mensual Definitivo** | `-${impact.recorte_pension_mensual:,.0f} CLP/mes` | **Pérdida vitalicia irreversible** si el afiliado se jubila hoy. |
+        | **Pensión Estimada Pre-Shock** | `\\${impact.pension_pre_shock_mensual:,.0f} CLP/mes` | Pensión vitalicia autofinanciada antes del desplome 2026. |
+        | **Pensión Actual Post-Shock** | `\\${impact.pension_post_shock_mensual:,.0f} CLP/mes` | Pensión vitalicia calculada con el saldo auditado actual. |
+        | **Recorte Mensual Definitivo** | `-\\${impact.recorte_pension_mensual:,.0f} CLP/mes` | **Pérdida vitalicia irreversible** si el afiliado se jubila hoy. |
         """
     )
 
