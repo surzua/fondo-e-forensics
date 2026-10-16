@@ -6,12 +6,13 @@ Ecosistema de investigación cuantitativa, análisis forense de datos y herramie
 
 ## 🎯 Tesis Central: "Dicen A, la Data dice B"
 
-* **Narrativa Oficial (Prensa Generalista y Vocerías AFP):** *"El Fondo E es el refugio conservador para afiliados próximos a jubilar. Las caídas de 2026 obedecen a la volatilidad transitoria de la renta fija local y deben evaluarse con un horizonte de largo plazo (3 a 5 años)."*
-* **Evidencia Empírica en los Microdatos:**
-  1. **Apalancamiento Sintético en Derivados (80% del daño):** De la caída nominal acumulada a septiembre (-7,4%), **5,9 puntos porcentuales** provienen de contratos **Swaps de Tasas de Interés** (-4,5 pp en swaps externos en USD y -1,4 pp en swaps locales).
-  2. **Duración Oculta (Sensibilidad Extrema a Tasas):** Mediante swaps (recibiendo tasa fija en USD y pagando tasa flotante SOFR), las AFP alargaron la duración efectiva del Fondo E desde ~5–7 años hasta **10,2 años en bonos físicos y 17 años con derivados**. Al subir el US Treasury 10Y de 4,18% a 5,29%, el fondo sufrió un drawdown similar al de un fondo especulativo de renta variable.
+* **Narrativa Oficial (Regulador y Vocerías AFP):** *"El Fondo E es el refugio conservador para afiliados próximos a jubilar. Las caídas de 2026 obedecen a pérdidas de capital por alza de tasas en títulos de deuda local y a un shock exógeno inevitable de la Fed; deben evaluarse con paciencia y horizonte de 3 a 5 años."*
+* **La Alerta Inicial de Prensa:** La prensa financiera (*La Tercera*) levantó las primeras banderas rojas al detectar un saldo neto de **-US$ 899,7 millones en derivados**, pero sin desentrañar la caja negra de la atribución ni su impacto en pensiones.
+* **Evidencia Empírica en los Microdatos (Nuestra Auditoría):**
+  1. **Apalancamiento Sintético en Derivados (80% del daño):** De la caída nominal acumulada a septiembre (-7,4%), **5,9 puntos porcentuales** provienen exclusivamente de contratos **Swaps de Tasas de Interés** (-4,5 pp en swaps externos en USD y -1,4 pp en swaps locales). La deuda física local solo explica 0,7 pp (9,5%).
+  2. **Duración Oculta (Sensibilidad Extrema a Tasas):** Mediante swaps (recibiendo tasa fija en USD y pagando tasa flotante SOFR), las AFP alargaron la duración efectiva del Fondo E desde ~5 años históricos hasta **10,2 años en bonos físicos y 17 años con derivados**. Al subir el US Treasury 10Y de 4,18% a 5,29%, el fondo sufrió un shock similar al de un fondo especulativo de renta variable.
   3. **Destrucción del Amortiguador Cambiario (Short USD al 150%):** El Fondo E vendió dólares a futuro mediante Forwards por hasta el **150% de sus activos en moneda extranjera**, quedando con una posición corta neta. Al escalar el tipo de cambio de $911 a $970 CLP/USD, los forwards restaron otros **0,8 puntos porcentuales**.
-  4. **La Falacia del Largo Plazo en Desacumulación:** Afiliados a meses de jubilar no tienen horizonte de recuperación. Retirarse o contratar una Renta Vitalicia bajo un drawdown de -10,39% consolida una **pérdida patrimonial y pensional perpetua e irreversible**.
+  4. **La Falacia del Largo Plazo en Desacumulación:** Afiliados a meses de jubilar no tienen horizonte de recuperación. Retirarse o contratar una Renta Vitalicia bajo un drawdown de -10,39% consolida una **pérdida patrimonial y pensional perpetua e irreversible (recorte de 10% a 11% en la pensión vitalicia de por vida)**.
 
 ---
 

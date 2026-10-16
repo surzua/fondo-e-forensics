@@ -12,9 +12,11 @@
 > Copia y pega el siguiente texto en LinkedIn. Sube el archivo PDF generado a partir del guion de 10 láminas (ver sección 2) como documento adjunto. **NO incluyas enlaces externos en el cuerpo del post** (el algoritmo de LinkedIn reduce el alcance); colócalos en el primer comentario tal como se especifica en la sección 3.
 
 ```text
-¿Te dijeron que la caída de -10,39% del Fondo E en 2026 fue "volatilidad normal de los bonos chilenos"?
+¿Te dijeron que la caída de -10,39% del Fondo E en 2026 fue "volatilidad normal de los bonos chilenos y un shock exógeno de la Fed" donde solo queda "esperar 5 años"?
 
-Audité los microdatos públicos de la Superintendencia de Pensiones y el Banco Central. La evidencia matemática dice exactamente lo contrario:
+La prensa financiera encendió las primeras alarmas al detectar un saldo negativo de US$ 899 millones en derivados. Pero nadie había abierto la caja negra para auditar el impacto real.
+
+Audité los microdatos públicos de la Superintendencia de Pensiones y el Banco Central. La evidencia matemática desmiente el relato oficial:
 
 👉 8 de cada 10 pesos perdidos NO fueron por bonos de Chile.
 Fueron por apuestas apalancadas en derivados internacionales.
@@ -71,13 +73,13 @@ En el primer comentario les dejo el link al artículo completo en mi blog y a la
 ### 📄 Lámina 2: El Relato Oficial vs. La Realidad
 * **Título:** **Dicen A, la Data Dice B**
 * **Columna Izquierda (La Narrativa Oficial):**
-  * *"Es la volatilidad normal de la renta fija local."*
-  * *"Las pensiones deben evaluarse con un horizonte de 3 a 5 años."*
-  * *"La culpa es del alza en las tasas del gobierno de Chile."*
+  * *"Fue el alza de tasas locales y un shock exógeno de la Fed."*
+  * *"Las inversiones previsionales deben evaluarse a 3 o 5 años."*
+  * *"El Fondo E es 86% bonos chilenos; es volatilidad normal."*
 * **Columna Derecha (La Evidencia en los Microdatos):**
   * ❌ Solo el 9,5% de la pérdida vino de bonos físicos chilenos.
-  * ⚠️ El 79,7% vino de derivados financieros offshore (Swaps en EE.UU.).
-  * 🛑 Un afiliado a 6 meses de jubilar **NO TIENE 5 AÑOS**: su pérdida se consolida para siempre.
+  * ⚠️ El 79,7% vino de swaps de tasas offshore (con duración de 17 años).
+  * 🛑 Un afiliado a 6 meses de jubilar **NO TIENE 5 AÑOS**: el recorte pensional es permanente.
 * **Pie de Lámina:** *Desliza para ver la descomposición matemática ➡️*
 
 ---
@@ -203,9 +205,9 @@ Todo el pipeline de datos (scrapers de SPensiones, series macro del Banco Centra
 ## 4. Hilo de Impacto para X (Twitter) [7 Tweets]
 
 ```text
-1/7 🧵 ¿Te dijeron que el desplome del Fondo E de las AFP en 2026 (-10,39% real) fue "volatilidad normal de los bonos chilenos"?
+1/7 🧵 ¿Te dijeron que el desplome del Fondo E de las AFP en 2026 (-10,39% real) fue "volatilidad normal de bonos locales y shock inevitable de la Fed" donde solo queda "esperar 5 años"?
 
-Audité los microdatos públicos de la @Superpensiones y el @bcentralchile. La evidencia matemática dice lo contrario. Abrimos hilo 👇
+La prensa alertó un saldo de -US$ 899M en derivados. Audité los microdatos públicos: la evidencia desmiente el relato oficial. Abrimos hilo 👇
 
 2/7 💣 1. El 80% de la pérdida NO fue por bonos locales:
 De la caída nominal de -7,40%, -5,90 puntos porcentuales provienen exclusivamente de apuestas en DERIVADOS (Swaps de tasas de interés en EE.UU. y locales). Los bonos físicos solo explican 0,7 puntos.
