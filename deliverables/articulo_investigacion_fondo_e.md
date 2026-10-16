@@ -7,13 +7,14 @@
 ---
 
 > ### 📌 Tesis en 30 Segundos
-> Durante 2026, el **Fondo E de las AFP en Chile** —el instrumento legalmente concebido para proteger los ahorros de quienes están a punto de jubilar— sufrió un derrumbe de **-10,39% real** (-7,40% nominal a septiembre). 
+> Durante 2026, el **Fondo E de las AFP en Chile** —el instrumento legalmente concebido para proteger los ahorros de quienes están a punto de jubilar— sufrió un derrumbe histórico de **-10,39% real** (-7,40% nominal a septiembre). 
 > 
-> La vocería oficial de la industria y la prensa financiera atribuyeron el golpe a la *"volatilidad normal de la renta fija local"* recomendando *"paciencia y mirar el largo plazo"*. **La evidencia empírica en los microdatos desmiente tajantemente esa narrativa:**
-> 1. **El 79,7% de la pérdida nominal** (-5,90 puntos porcentuales de los -7,40 pp perdidos) provino exclusivamente de apuestas apalancadas en contratos derivados (**Swaps de Tasas de Interés**), principalmente en EE.UU.
-> 2. Mediante estos derivados, las AFP alargaron la sensibilidad a tasas del Fondo E desde sus 5 años históricos hasta **17,0 años de duración efectiva total**, asumiendo el perfil de volatilidad de un hedge fund especulativo sin poner un solo peso de caja inicial.
-> 3. Anularon el amortiguador natural del dólar vendiendo forwards por el **150% de sus activos externos**, perdiendo otros **-0,80 pp** cuando el tipo de cambio escaló de \$911 a \$970 CLP.
-> 4. Para un trabajador a meses de jubilar, el daño no es transitorio: consolidar la pérdida al momento de pensionarse reduce la **pensión mensual vitalicia de por vida entre un 10% y un 11%**, exigiendo hasta **2 años de trabajo forzado adicional** solo para intentar reponer el patrimonio evaporado.
+> Mientras el informe oficial de la Superintendencia de Pensiones atribuyó las mermas al alza de tasas en la deuda local, y el gremio de las AFP se defendió calificándolo como un "shock exógeno inevitable de la Fed" recomendando "paciencia y mirar el largo plazo (3 a 5 años)", la prensa financiera encendió las primeras alarmas al detectar un saldo negativo de -US$ 899,7 millones en derivados en la cartola del fondo.
+> 
+> **Esta auditoría forense abre la caja negra de los microdatos y demuestra lo que nadie había cuantificado:**
+> 1. **La autopsia matemática:** El saldo en derivados no fue un factor secundario; **el 79,7% de la pérdida nominal total** (-5,90 puntos porcentuales de los -7,40 pp perdidos) provino exclusivamente de apuestas apalancadas en contratos de **Swaps de Tasas de Interés** (principalmente en EE.UU.). Los bonos físicos chilenos solo explicaron el 9,5% (-0,7 pp) de la caída.
+> 2. **El mecanismo deliberado:** No fue una desgracia meteorológica de Wall Street. Aprovechando un vacío regulatorio, las administradoras alargaron la sensibilidad a tasas del Fondo E desde sus 5 años históricos hasta **17,0 años de duración efectiva total**, asumiendo el perfil de riesgo de un hedge fund especulativo mediante swaps fuera de balance a costo cero de caja inicial, sumado a una sobrecobertura cambiaria corta (short USD) al 150%.
+> 3. **La falacia del largo plazo en desacumulación:** Para un trabajador a meses de jubilar, el daño no es transitorio ni se revierte esperando. Las pérdidas en derivados representan compromisos de pago efectivos en caja; al consolidarlas al momento del retiro, se traducen en un **recorte irreversible de por vida de 10% a 11% en la pensión mensual vitalicia**, exigiendo hasta **2 años de trabajo forzado adicional** solo para intentar reponer el patrimonio evaporado.
 
 ---
 
@@ -49,9 +50,9 @@ La primera anomalía salta a la vista al comparar el comportamiento del Fondo E 
 
 ## 3. ¿Dónde se Fueron 8 de Cada 10 Pesos? Descomposición Factorial (Brinson Waterfall)
 
-Cuando los voceros gremiales salieron a explicar las pérdidas, el argumento predilecto fue: *"Las tasas de interés de los bonos del gobierno de Chile subieron, y cuando las tasas suben, el precio de los bonos cae"*.
+Cuando los reportes oficiales de la Superintendencia y las vocerías gremiales salieron a explicar las pérdidas, el argumento predilecto apuntó a la renta fija tradicional: *"Las tasas de interés de los títulos de deuda local subieron, generando pérdidas de capital en bonos"*, complementado por la Asociación de AFP como un *"efecto inevitable del alza de tasas de la Fed y la inflación global"*. Mientras tanto, el saldo en rojo de -US$ 899 millones en derivados ventilado por la prensa financiera permanecía como una cifra aislada, sin que nadie determinara con precisión qué porcentaje del derrumbe correspondía a cada factor.
 
-Realizamos una **descomposición factorial aditiva de retornos** sobre la cartera total del Fondo E a septiembre de 2026. Los resultados desmontan el mito:
+Realizamos una **descomposición factorial aditiva de retornos** sobre la cartera total del Fondo E a septiembre de 2026. Los resultados desmontan el mito de la deuda local y le ponen números exactos a la sospecha:
 
 ![Waterfall de Atribución Factorial de Pérdidas](../data/processed/charts/producto2_waterfall_atribucion_16x9.png)
 *Figura 2: Cascada factorial que desglosa el retorno nominal (-7,40%) y real (-10,39%) del Fondo E en 2026 por tipo de instrumento financiero y efecto inflación.*
