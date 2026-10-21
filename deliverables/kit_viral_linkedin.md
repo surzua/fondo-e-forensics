@@ -188,7 +188,10 @@ Prueba con tu propio saldo, AFP, edad y sueldo imponible para estimar tu recorte
 📖 2. Artículo Completo de Investigación (con fórmulas de Taylor, Woolhouse y tablas RV-2020):
 👉 https://surzua.github.io/blog/la-falacia-del-fondo-seguro
 
-💻 3. Código Fuente Abierto y Microdatos en GitHub:
+💡 3. Guía Didáctica de Finanzas (Para entender Bonos, Swaps y Duración desde cero con metáforas cotidianas):
+👉 https://surzua.github.io/blog/guia-finanzas-fondo-e
+
+💻 4. Código Fuente Abierto y Microdatos en GitHub:
 Todo el pipeline de datos (scrapers de SPensiones, series macro del Banco Central, modelos de atribución y tests en pytest) es 100% reproducible y auditable:
 👉 https://github.com/surzua/fondo-e-forensics
 
