@@ -65,3 +65,4 @@ data/processed/*.parquet
 # Borradores locales de publicación
 deliverables/post_linkedin_fondo_e.md
 deliverables/kit_viral_linkedin.md
+deliverables/linkedin/
